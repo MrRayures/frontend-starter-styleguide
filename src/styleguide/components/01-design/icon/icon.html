@@ -1,0 +1,30 @@
+{% set icons = [
+  {name:"cross", value:""},
+  {name:"menu", value:""}
+]%}
+
+<h2 class="sg-h2">Sprite SVG</h2>
+<p class="sg-text">Icones accessible via sprite SVG</p>
+<div class="sg-columns sg-columns--bordered">
+  <svg class="c-icon" role="img" class="c-icon" focusable="false" aria-hidden="true">
+    <use xlink:href="{{ '/icons/sprite/icons.svg' | path }}#menu" />
+  </svg>
+</div>
+
+
+<h2 class="sg-h2">Liste complète</h2>
+
+<div class="sg-columns sg-columns--bordered">
+  <ul class="sg-list sg-list--icon">
+    {% for icon in icons  %}
+      <li class="sg-box--icon">
+        <svg class="c-icon" role="img" class="c-icon" focusable="false" aria-hidden="true">
+          <use xlink:href="{{ '/icons/sprite/icons.svg' | path }}#{{icon.name}}" />
+        </svg>
+        <span>{{icon.name}}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+
